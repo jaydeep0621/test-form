@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form</title>
+</head>
+<body>
+	<center>
+	<h1>Short Survey</h1>
+		<form>
+			<label>Email I'D*: </label>
+			<input type="email" placeholder="abc@xyz.com" id="email"/><br><br>
+			<label>First Name*: </label>
+			<input type="text" placeholder="First Name" id="fname"/><br><br>
+			<label>Middle Name: </label>
+			<input type="text" placeholder="Middle Name" id="mname"/><br><br>
+			<label>Last Name*: </label>
+			<input type="text" placeholder="Last Name" id="lname"/><br><br>
+			<label>Date of Birth*: </label>
+			<input type="date" id="date"/><br><br>
+			<label>Enter Password: </label>
+			<input type="password" id="pass"><br><br>
+			<label>Confirm Password: </label>
+			<input type="password" id="password"><br><br>
+			<label>* Field are Mandatory</label><br><br>
+			<input type="button" value="Submit" id="sub"/>
+			<input type="Reset" value = "Reset" id="reset"/>
+		</form>
+		<p id="ass">Successfull!!</p>
+		</center>
+		<script type="text/javascript">
+			function validation(){
+				var pass = document.getElementById("password").value;
+				var passw = document.getElementById("pass").value;
+				var email = document.getElementById("email").value;
+				var fname = document.getElementById("fname").value;
+				var mname = document.getElementById("mname").value;
+				var lname = document.getElementById("lname").value;
+				var date = document.getElementById("date").value;
+				if(email == ""){
+					alert("Email Cannot Be Empty");
+					return;
+				}
+				if(fname == ""){
+					alert("First Name Cannot Be Empty");
+					return;
+				}
+				if(lname == ""){
+					alert("Last Name Cannot Be Empty");
+					return;
+				}
+				if(date == ""){
+					alert("Date Cannot Be Empty");
+					return;
+				}
+				if(pass==passw){
+					document.getElementById("ass").style.display = "block";
+					document.getElementById("ass").innerHTML = "Login Successful";
+				}
+				else{
+					alert("Password Does Not Match");
+				}
+			}
+				document.getElementById("ass").style.display = "none";
+				console.log()
+				document.getElementById("sub").onclick = function(){validation(); };
+			document.getElementById("reset").onclick = function() {close(); };
+			
+			function close(){
+				document.getElementById("ass").style.display = "none";
+			}
+			
+		</script>
+	
+		<a href="D:\JavaScript\BirthYear Finder.html">
+			<button>Login</button>
+	    </a>
+	
+</body>
+</html>
